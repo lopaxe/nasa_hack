@@ -62,9 +62,9 @@
         <a class="btn btn-primary" href="#">Call to NASA!</a>
       </div>
       <!-- /.col-md-4 -->
-      <form method="post" action="http://127.0.0.1:5000/upload-image">
+      <form method="post" action="http://127.0.0.1:5000/upload-image" enctype="multipart/form-data">
       <div>
-      	<input type="file" class="form-control-file" id="planetFormControlFile1">
+      	<input type="file" class="form-control-file" id="planetFormControlFile1" name="media">
       </div>
       <div class="row align-items-center">
       	<div class="form-group">
@@ -225,9 +225,6 @@
         return 'Current value: ' + value;
       }
     });
-  </script>
-  <script>
-  	$('#file-upload').file_upload();
   </script>
 </body>
 
