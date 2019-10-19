@@ -8,7 +8,7 @@
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>Small Business - Start Bootstrap Template</title>
+  <title>EXOSELFIE - Build a planet to live!</title>
 
   <!-- Bootstrap core CSS -->
   <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -49,67 +49,133 @@
   <!-- Home page Content -->
   <div class="container">
 
+  <!--    <html>
+          <body background="astronaut.jpg">
+          <h1>Hello world!</h1>
+          <p><a href="https://www.w3schools.com">Visit W3Schools.com!</a></p>
+          </body>
+        </html>
+--> 
+        
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>NASA</title>
+
+<!-- CSS -->	
+<style type="text/css">
+html, 
+body {
+height: 100%;
+}
+
+body {
+background-image: url(astronaut.jpg);
+background-repeat: repeat;
+background-size: 100% 100%;
+}
+</style>
+
+</head>
+<body>
+
+<!-- HTML -->
+<img src="exoselfie_logo.JPG" height="180" width="240" align="left">
+</body>
+</html>
+
+
+
     <!-- Heading Row -->
-    <div class="row align-items-center my-5">
-      <div class="col-lg-7">
-        <img class="img-fluid rounded mb-4 mb-lg-0" src="https://www.nasa.gov/sites/default/files/thumbnails/image/space-apps-challenge2.jpg" alt="">
+    <!DOCTYPE html>
+    <html>
+    <head>
+    <style>
+        .backgroun {
+            background-image: url("hs.jpg");
+        }
+    </style>
+    </head>
+    <body> 
+      <div class="row align-items-center my-5">
+      <div class="col-lg-7"> 
+        <!-- <img class="img-fluid rounded mb-4 mb-lg-0" src="https://www.nasa.gov/sites/default/files/thumbnails/image/space-apps-challenge2.jpg" alt=""> -->
       </div>
       <!-- /.col-lg-8 -->
       <div class="col-lg-5">
-        <h1 class="font-weight-light">Build your own <b>EXO</b>planet</h1>
-        <p>This is an education game that is great for small kids. It does have too much fantazy, but it makes a great use of the NASA data. Feel free to play this game for any time you want!</p>
+        <h1 class="font-weight-light">Build your exoplanet!</h1>
+        <p class=”backgroun> EXOSELFIE is an educational game for everyone who wants to learn more about planets’ structure, star-planets systems and habitable zone features. It is creative game that makes a great use of the NASA data. Embrace yourself and take a selfie to see how will you look in your newly built exoplanet!<p>
         <b>Are you ready to build your planet?</b>
-        <a class="btn btn-primary" href="#">Call to NASA!</a>
+        <!-- <a class="btn btn-primary" href="#">Upload Selfie!</a> -->
+        <input type="file" class="form-control-file" id="planetFormControlFile1" name="media">
       </div>
-      <!-- /.col-md-4 -->
+      <!-- /.col-md-4 
       <form method="post" action="http://127.0.0.1:5000/upload-image" enctype="multipart/form-data">
       <div>
+        <div class="row align-items-center">
       	<input type="file" class="form-control-file" id="planetFormControlFile1" name="media">
       </div>
       <div class="row align-items-center">
       	<div class="form-group">
-      		<input type="submit" value="Submit"/>
+      		<input type="Submit" value="Submit"/>
    		</div>
    	   </div>
    	   </form>
-    </div>
+    </div> -->
     <!-- /.row -->
+    
 
   </div>
   <!-- /.container -->
-
   <!-- Projects Section -->
   <!--  Planet|start  Section -->
   <section id="projects" class="projects-section bg-light">
     <div class="container">
-
       <!-- Project One Row -->
-      
       	<form method="post" action="http://127.0.0.1:5000/upload-image/post" enctype="text/plain">
-      		<div class="row">
+      	<div class="row">
         <div class="col">
           <div class="form-group text-center">
-            <label>Planet parameters</label>
+            <label> <b>Planetary Parameters</b> </label>
           </div>
           <div class="form-group">
             <label>Size</label>
               <input id="ex1" data-slider-id='ex1Slider' type="text" data-slider-min="0" data-slider-max="20" data-slider-step="1" data-slider-value="14"/>
-          </div>
+              <body>
+                  <html>
+                  <script> 
+                    var slider = new Slider('#ex1', {
+                    formatter: function(value) {
+                    return 'Current value: ' + value;
+                    }
+                    });
+                  </script>
+                  <style>
+                  #ex1Slider .slider-selection {
+                  background: #BABABA;
+                  }
+                  </style>
+                </html>
+              </body>
+            </div>
+
           <div class="form-group">
             <label>Radius</label>
             <input id="ex2" data-slider-id='ex2Slider' type="text" data-slider-min="0" data-slider-max="20" data-slider-step="1" data-slider-value="14"/>
           </div>
           <div class="form-group">
-            <label>Distance from the star</label>
+            <label>Distance*</label>
             <input id="ex3" data-slider-id='ex3Slider' type="text" data-slider-min="0" data-slider-max="20" data-slider-step="1" data-slider-value="14"/>
+            <p>* from the star</p>
           </div>
         </div>
         <div class="col">
           <div class="form-group text-center">
-                <label>Start parameters</label>
+                <label><b>Stellar Parameters</b></label>
             </div>
       	  <div class="form-group">
-        	<label>temperature</label>
+        	<label>Temperature</label>
               <input id="ex4" data-slider-id='ex4Slider' type="text" data-slider-min="0" data-slider-max="20" data-slider-step="1" data-slider-value="14"/>
           </div>
           <div class="form-group">
@@ -141,7 +207,16 @@
         <div class="card h-100">
           <div class="card-body">
             <h2 class="card-title">Description</h2>
-            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem magni quas ex numquam, maxime minus quam molestias corporis quod, ea minima accusamus.</p>
+            <p class="card-text">
+                Your mission is to build a planet for all of us to live in. 
+                You will have to be wise and careful when selecting parameters for a star and a planet you are about to compose. 
+                
+                Your goal is to survive and understand how to create the world hospitable to life. Maybe it will become our new holiday destination?!
+                
+                However, there are over 100 Billion planets in our Galaxy called Milky-Way, 4 000 were confirmed as exoplanets but only nearly 50 are in the habitable zone. 
+                
+                Embrace yourself and take a selfie to see how will you look in your newly built exoplanet!
+                </p>
           </div>
           <div class="card-footer">
             <a href="#" class="btn btn-primary btn-sm">More Info</a>
@@ -152,11 +227,10 @@
       <div class="col-md-4 mb-5">
         <div class="card h-100">
           <div class="card-body">
-            <h2 class="card-title">Rules</h2>
-            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod tenetur ex natus at dolorem enim! Nesciunt pariatur voluptatem sunt quam eaque, vel, non in id dolore voluptates quos eligendi labore.</p>
+            <h2 class="card-title">Look at you</h2>
+            <p class="card-text"></p>
           </div>
           <div class="card-footer">
-            <a href="#" class="btn btn-primary btn-sm">More Info</a>
           </div>
         </div>
       </div>
@@ -164,11 +238,14 @@
       <div class="col-md-4 mb-5">
         <div class="card h-100">
           <div class="card-body">
-            <h2 class="card-title">have fun</h2>
-            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem magni quas ex numquam, maxime minus quam molestias corporis quod, ea minima accusamus.</p>
+            <h2 class="card-title">Results</h2>
+            <p class="card-text"> Your survival score: </p>
+            <p class="card-text"> Survival status: </p>
+            <p class="card-text"> Temperature on your planet: </p>
+            <p class="card-text"> Surface gravity on your plannet: </p>
+            <p class="card-text"> Similar exoplanet discovered by NASA: </p>
           </div>
           <div class="card-footer">
-            <a href="#" class="btn btn-primary btn-sm">More Info</a>
           </div>
         </div>
       </div>
