@@ -26,6 +26,7 @@ def upload_image():
         return jsonify({"status": "no files sent"})
 
 
+
 if __name__ == "__main__":
     app.run(debug=True)
     # For public web serving:
