@@ -17,19 +17,17 @@ def predict():
     return jsonify(response)
 
 
-@app.route("/upload-image", methods=["GET", "POST"])
+@app.route("/upload-image", methods=["POST"])
 def upload_image():
-    if request.method == "POST":
-        if request.files:
-            image = request.files["image"]
-            print(image)
-            return jsonify({"status": "successful upload"})
-        else:
-            return jsonify({"status": "no files sent"})
+    if request.files:
+        image = request.files["media"]
+        return jsonify({"status": "successful upload"})
+    else:
+        return jsonify({"status": "no files sent"})
 
 
 if __name__ == "__main__":
-    app.run(debug=False)
+    app.run(debug=True)
     # For public web serving:
     # app.run(host='0.0.0.0')
     app.run()
