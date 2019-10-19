@@ -36,20 +36,17 @@
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">About</a>
+            <a class="nav-link js-scroll-trigger" href="#projects">Projects</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Services</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Contact</a>
+            <a class="nav-link js-scroll-trigger" href="#info">information</a>
           </li>
         </ul>
       </div>
     </div>
   </nav>
 
-  <!-- Page Content -->
+  <!-- Home page Content -->
   <div class="container">
 
     <!-- Heading Row -->
@@ -59,42 +56,91 @@
       </div>
       <!-- /.col-lg-8 -->
       <div class="col-lg-5">
-        <h1 class="font-weight-light">Build your own planet</h1>
+        <h1 class="font-weight-light">Build your own <b>EXO</b>planet</h1>
         <p>This is an education game that is great for small kids. It does have too much fantazy, but it makes a great use of the NASA data. Feel free to play this game for any time you want!</p>
+        <b>Are you ready to build your planet?</b>
         <a class="btn btn-primary" href="#">Call to NASA!</a>
       </div>
       <!-- /.col-md-4 -->
+      <form method="post" action="http://localhost/server/post/picture">
+      <div>
+      	<input type="file" class="form-control-file" id="planetFormControlFile1">
+      </div>
+      <div class="row align-items-center">
+      	<div class="form-group">
+      		<input type="submit" value="Submit"/>
+   		</div>
+   	   </div>
+   	   </form>
     </div>
     <!-- /.row -->
 
-    <!-- Call to Action Well -->
-    <div class="card text-white bg-secondary my-5 py-4 text-center">
-      <div class="card-body">
-      <form method="post" action="http://localhost/server/post">
-        <div class="form-group">
-          <label for="planetFormControlFile1">Planet parameters</label>
-          <input type="file" class="form-control-file" id="planetFormControlFile1">
-        </div>
-        <div class="form-group">
-          <label>Pirmas</label>
-            <input id="ex1" data-slider-id='ex1Slider' type="text" data-slider-min="0" data-slider-max="20" data-slider-step="1" data-slider-value="14"/>
-        </div>
-        <div class="form-group">
-          <label>Antras</label>
-          <input id="ex2" data-slider-id='ex2Slider' type="text" data-slider-min="0" data-slider-max="20" data-slider-step="1" data-slider-value="14"/>
-        </div>
-        <input type="submit" value="Submit"/>
-          </form>
-      </div>
-    </div>
+  </div>
+  <!-- /.container -->
 
+  <!-- Projects Section -->
+  <!--  Planet|start  Section -->
+  <section id="projects" class="projects-section bg-light">
+    <div class="container">
+
+      <!-- Project One Row -->
+      
+      	<form method="post" action="http://localhost/server/post">
+      		<div class="row">
+        <div class="col">
+          <div class="form-group text-center">
+            <label>Planet parameters</label>
+          </div>
+          <div class="form-group">
+            <label>Size</label>
+              <input id="ex1" data-slider-id='ex1Slider' type="text" data-slider-min="0" data-slider-max="20" data-slider-step="1" data-slider-value="14"/>
+          </div>
+          <div class="form-group">
+            <label>Radius</label>
+            <input id="ex2" data-slider-id='ex2Slider' type="text" data-slider-min="0" data-slider-max="20" data-slider-step="1" data-slider-value="14"/>
+          </div>
+          <div class="form-group">
+            <label>Distance from the star</label>
+            <input id="ex3" data-slider-id='ex3Slider' type="text" data-slider-min="0" data-slider-max="20" data-slider-step="1" data-slider-value="14"/>
+          </div>
+        </div>
+        <div class="col">
+          <div class="form-group text-center">
+                <label>Start parameters</label>
+            </div>
+      	  <div class="form-group">
+        	<label>temperature</label>
+              <input id="ex4" data-slider-id='ex4Slider' type="text" data-slider-min="0" data-slider-max="20" data-slider-step="1" data-slider-value="14"/>
+          </div>
+          <div class="form-group">
+            <label>Radius</label>
+          	  <input id="ex5" data-slider-id='ex5Slider' type="text" data-slider-min="0" data-slider-max="20" data-slider-step="1" data-slider-value="14"/>
+          </div>
+   			</div>
+   		</div>
+   		<div class="row align-items-center">
+   			<div class="form-group">
+   				<input type="submit" value="Submit"/>
+   			</div>
+   	    </div>
+        </form>
+    </div>
+  </section>
+
+  	<!-- /.container -->
+  <!-- /.project -->
+ 
+ <!-- Information Section -->
+ <section id="info" class="info-section bg-light">
+    <div class="container">
+
+      <!-- information One Row -->
     <!-- Content Row -->
-    <!--
     <div class="row">
-      <div class="col-md-4 mb-5">Pirmas
+      <div class="col-md-4 mb-5">
         <div class="card h-100">
           <div class="card-body">
-            <h2 class="card-title">Card One</h2>
+            <h2 class="card-title">Description</h2>
             <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem magni quas ex numquam, maxime minus quam molestias corporis quod, ea minima accusamus.</p>
           </div>
           <div class="card-footer">
@@ -102,13 +148,11 @@
           </div>
         </div>
       </div>
-      //-->
       <!-- /.col-md-4 -->
-      <!--
       <div class="col-md-4 mb-5">
         <div class="card h-100">
           <div class="card-body">
-            <h2 class="card-title">Card Two</h2>
+            <h2 class="card-title">Rules</h2>
             <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod tenetur ex natus at dolorem enim! Nesciunt pariatur voluptatem sunt quam eaque, vel, non in id dolore voluptates quos eligendi labore.</p>
           </div>
           <div class="card-footer">
@@ -116,13 +160,11 @@
           </div>
         </div>
       </div>
-      //-->
       <!-- /.col-md-4 -->
-      <!--
       <div class="col-md-4 mb-5">
         <div class="card h-100">
           <div class="card-body">
-            <h2 class="card-title">Card Three</h2>
+            <h2 class="card-title">have fun</h2>
             <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem magni quas ex numquam, maxime minus quam molestias corporis quod, ea minima accusamus.</p>
           </div>
           <div class="card-footer">
@@ -130,14 +172,15 @@
           </div>
         </div>
       </div>
-      //-->
       <!-- /.col-md-4 -->
 
     </div>
     <!-- /.row -->
+    </div>
+  </section>
 
-  </div>
-  <!-- /.container -->
+  	<!-- /.container -->
+  <!-- /.information -->	
 
   <!-- Footer -->
   <footer class="py-5 bg-dark">
@@ -152,7 +195,7 @@
   <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
   <script src="vendor/bootstrap/js/bootstrap-slider.min.js"></script>
   <script>
-    // With JQuery
+    // With JQuery Sliders
     $('#ex1').slider({
       formatter: function(value) {
         return 'Current value: ' + value;
@@ -164,6 +207,27 @@
         return 'Current value: ' + value;
       }
     });
+
+    $('#ex3').slider({
+      formatter: function(value) {
+        return 'Current value: ' + value;
+      }
+    });
+
+    $('#ex4').slider({
+      formatter: function(value) {
+        return 'Current value: ' + value;
+      }
+    });
+
+    $('#ex5').slider({
+      formatter: function(value) {
+        return 'Current value: ' + value;
+      }
+    });
+  </script>
+  <script>
+  	$('#file-upload').file_upload();
   </script>
 </body>
 
