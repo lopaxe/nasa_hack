@@ -21,6 +21,7 @@ def predict():
 def upload_image():
     if request.files:
         image = request.files["media"]
+        image.save("save_test/testukas.jpg")
         return jsonify({"status": "successful upload"})
     else:
         return jsonify({"status": "no files sent"})
