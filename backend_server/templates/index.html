@@ -54,26 +54,11 @@ background-size: 100% 100%;
         </div>
       <div class="row align-items-center my-5">
       </div>
-      <div class="col-lg-5">
+      <div class="col-lg-5 bg-white">
         <h1 class="font-weight-light">Build your exoplanet!</h1>
         <p> EXOSELFIE is an educational game for everyone who wants to learn more about planets’ structure, star-planets systems and habitable zone features. It is creative game that makes a great use of the NASA data.
           Embrace yourself and take a selfie to see how will you look in your newly built exoplanet!
         Are you ready to build your planet? </p>
-        <style>
-        h1 {
-          text-align: center;
-          background-color: white;
-           }
-        p {
-          text-align: center;
-          background-color: white;
-           }
-        b {
-          text-align: center;
-          background-color: white;
-           }
-        </style>
-
         <!-- <a class="btn btn-primary" href="#">Upload Selfie!</a> -->
 
       </div>
@@ -97,9 +82,6 @@ background-size: 100% 100%;
   <section id="projects" class="projects-section bg-light">
     <div class="container">
       	<form method="post" action="http://127.0.0.1:5000/upload-image" enctype="multipart/form-data">
-      	<div class="row">
-            <input type="file" class="form-control-file" id="planetFormControlFile1" name="media">
-        </div>
             <div class="row">
         <div class="col">
           <div class="form-group text-center">
@@ -115,14 +97,14 @@ background-size: 100% 100%;
           <div class="form-group">
             <label>Planet Radius (Earth radii)</label>
             <span class="font-weight-bold indigo-text mr-2 mt-1">0.5</span>
-            <input id="ex2" name="R_exo" data-slider-id='ex2Slider' type="text" data-slider-min="0" data-slider-max="25" data-slider-step="1" data-slider-value="1"/>
+            <input id="ex2" name="R_exo" data-slider-id='ex2Slider' type="text" data-slider-min="0.5" data-slider-max="25" data-slider-step="1" data-slider-value="1"/>
             <span class="font-weight-bold indigo-text ml-2 mt-1">25</span>
           </div>
           <div class="form-group">
             <label>Distance from the star (AU)</label>
             <span class="font-weight-bold indigo-text mr-2 mt-1">0.01</span>
-            <input id="ex3" name="a" data-slider-id='ex3Slider' type="text" data-slider-min="0.01" data-slider-max="2" data-slider-step="0.01" data-slider-value="1"/>
-            <span class="font-weight-bold indigo-text ml-2 mt-1">2</span>
+            <input id="ex3" name="a" data-slider-id='ex3Slider' type="text" data-slider-min="0.01" data-slider-max="5" data-slider-step="0.01" data-slider-value="1"/>
+            <span class="font-weight-bold indigo-text ml-2 mt-1">5</span>
           </div>
         </div>
         <div class="col">
@@ -132,16 +114,17 @@ background-size: 100% 100%;
       	  <div class="form-group">
         	<label>Effective Temperature (K)</label>
               <span class="font-weight-bold indigo-text mr-2 mt-1">2500</span>
-              <input id="ex4" name="T_star" data-slider-id='ex4Slider' type="text" data-slider-min="2500" data-slider-max="10000" data-slider-step="50" data-slider-value="2800"/>
-              <span class="font-weight-bold indigo-text ml-2 mt-1">10000</span>
+              <input id="ex4" name="T_star" data-slider-id='ex4Slider' type="text" data-slider-min="2500" data-slider-max="10000" data-slider-step="50" data-slider-value="5700"/>
+              <span class="font-weight-bold indigo-text ml-2 mt-1">20000</span>
           </div>
           <div class="form-group">
             <label>Stellar Radius (solar radii)</label>
               <span class="font-weight-bold indigo-text mr-2 mt-1">0</span>
-              <input id="ex5" name="R" data-slider-id='ex5Slider' type="text" data-slider-min="0" data-slider-max="20" data-slider-step="1" data-slider-value="14"/>
+              <input id="ex5" name="R" data-slider-id='ex5Slider' type="text" data-slider-min="0.01" data-slider-max="20" data-slider-step="1" data-slider-value="1"/>
               <span class="font-weight-bold indigo-text ml-2 mt-1">100</span>
             </div>
-            <input type="submit" value="Submit"/>
+              <input type="file" class="form-control-file" id="planetFormControlFile1" name="media">
+              <input type="submit" value="Submit"/>
        </div>
      </div>
     </div>
@@ -188,9 +171,9 @@ background-size: 100% 100%;
         <div class="card h-100">
           <div class="card-body">
             <h2 class="card-title">Results</h2>
-            <p class="card-text"> Here's a picture of you on the planet that you've built yourself! It orbits a start that has a yellow tint because of its temperature. The average temperature on this planet is 894 degrees centigrade which is considered extremely hot. The surface gravity of your planet is around that of the Earth which is normal to the human body. Unfortunately you wouldn't last 10 minutes on this planet because of extreme heat.
+            <p class="card-text"> Here's a picture of you on the planet that you've built yourself! It orbits a start that has a yellow tint because of its temperature. The average temperature on this planet is 471 degrees centigrade which is considered extremely hot. The surface gravity of your planet is around 17 times larger than Earth's and is considered deadly. Unfortunately you wouldn't last 10 minutes on this planet because of extreme heat and unbearable gravitational force.
 
-There is a known exoplanet called 'CoRoT-16 b' that is similar to your planet with a score of 99. This planet completes an orbit around its host star CoRoT-16 every 5 days. </p>
+There is a known exoplanet called 'Kepler-75 b' that is similar to your planet with a score of 82. This planet completes an orbit around its host star Kepler-75 every 9 days. </p>
           </div>
           <div class="card-footer">
           </div>
