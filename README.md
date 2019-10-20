@@ -1,4 +1,4 @@
-<img src="https://i.imgur.com/4g9pias.jpg" />
+<img src="https://i.imgur.com/24ebrZ1.png" />
 
 # Using the app:
 
