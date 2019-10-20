@@ -37,8 +37,12 @@ def upload_image():
 
     if request.files:
         image = request.files["media"]
-        #params = request.get_json(force=True)
-        params = {"T_star": 5400, "R": 2, "a": 1, "M_exo":1, "R_exo":1}
+        params_inspect= request.form
+        params = {"T_star": float(params_inspect['T_star']),
+                  "R": float(params_inspect['R']),
+                  "a": float(params_inspect['a']),
+                  "M_exo": float(params_inspect['M_exo']),
+                  "R_exo": float(params_inspect['R_exo'])}
         image.save(f"{app_config.UPLOAD_PATH}/{image.filename}")
         planet_object = Planet(**params)
         survival = planet_object.surviveTotal
@@ -67,8 +71,10 @@ def upload_image():
         weighted_rgb_image = np.asarray(weighted_rgb_image, dtype=int)
         cv.imwrite(f"{app_config.weigted_transformation_path}/{image.filename}", weighted_rgb_image)
         cv.imwrite("templates/result/Result.jpg", weighted_rgb_image)
-        hack.hack_index(hack.returnText(planet_object.surviveTotal))
-        return jsonify({"status": "successful upload"})
+        hack.hack_index(hack.returnText(planet_object.surviveTotal, planet_object.T_star))
+        return redirect("http://localhost:8000/templates/")
+        #return jsonify({"status": "successful upload"})
+        #return f"{planet_object.RGB}"
     else:
         return jsonify({"status": "no files sent"})
 

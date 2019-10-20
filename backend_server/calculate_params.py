@@ -243,7 +243,7 @@ def loadData():
     df = pd.read_excel("NASA_Dataset_final.xlsx",
                   sheet_name='Final Dataset',
                   header=3)
-    df = df[df.keys()[:9]]
+    #df = df[df.keys()[:9]] # cleans rows a bit
     return(df)
 
 def getSimilar(df,T,G,A):
@@ -286,10 +286,24 @@ def tint(T,img_path):
     return(img)
 
 ## Text
-def returnText(cfg):
+def returnText(cfg,T_star):
     # Survival
     text = f"""
     Here's a picture of you on the planet that you've built yourself! 
+    It orbits a start that 
+    """
+    if T_star<2000:
+        text+="appears red "
+    elif T_star<5000:
+        text+="has an orange tint "
+    elif T_star<9000:
+        text+="has a yellow tint "
+    elif T_star <10300:
+        text+="appears white to the human eye "
+    else:
+        text+="has a bluish color "
+    text+=f"because of its temperature. "
+    text+=f"""
     The average temperature on this planet is {round(cfg['T']):.0f} 
     degrees centigrade which is considered 
     """
@@ -308,7 +322,7 @@ def returnText(cfg):
         text+="normal. "
     text+="The surface gravity of your planet is "
     if cfg['G_flag'] == 'normal':
-        text+=f"around that of the Earth which is normal to a human body. "
+        text+=f"around that of the Earth which is normal to the human body. "
     elif cfg['G_flag'] == 'micro':
         if cfg['G']<0.1:
             text+=f"less than 10% "
@@ -326,7 +340,7 @@ def returnText(cfg):
         text+=f"around {G:.0f} times larger than Earth's and is considered deadly. "
     if cfg['surv']:
         text+=f"""
-        Congratulations, you would probably survive on this planet! 
+        Congratulations, you would probably survive on this planet!
         """
     else:
         text+="Unfortunately you "
@@ -361,7 +375,7 @@ def returnText(cfg):
             text+=" and "
         if 'G' in cfg['cod']:
             text+="unbearable gravitational force"
-        text+=". "
+        text+="."
     text = text.replace('\n','').replace("    ",'')
     paragraph1 = text
     
@@ -369,19 +383,21 @@ def returnText(cfg):
     df = loadData()
     df,idx = getSimilar(df,cfg['T'],cfg['G'],0.05)
     planet = df.loc[idx]
-    text = f"There is a known exoplanet called {planet['pl_name']} "
-    text+= "completing an orbit around its host star DATA_MISSING "
+    text = f"There is a known exoplanet called '{planet['pl_name']}' "
+    text+= f"that is similar to your planet with a score of "
+    text+= f"{planet['sim']*100:.0f}. "
+    text+= f"This planet completes an orbit around its host star "
+    text+= f"{planet['st_name']} "
     if round(planet['pl_orbper']) == 1:
-        text+='each day '
+        text+='each day.'
     elif planet['pl_orbper'] > 1:
-        text+=f"every {round(planet['pl_orbper']):.0f} days "
+        text+=f"every {round(planet['pl_orbper']):.0f} days."
     elif round(planet['pl_orbper']*24) == 1:
-        text+="every hour "
+        text+="every hour."
     elif planet['pl_orbper']*24 < 1:
-        text+=f"multiple times every hour "
+        text+=f"multiple times every hour."
     else:
-        text+=f"every {round(planet['pl_orbper']*24):.0f} hours "
-    text+= f"that is similar to your planet with a score of {planet['sim']*100:.0f}."
+        text+=f"every {round(planet['pl_orbper']*24):.0f} hours."
     text = text.replace('\n','').replace("    ",'')
     text = paragraph1 +'\n\n'+ text
     return(text)
@@ -408,6 +424,13 @@ def test_RGB(T):
     ax = RGBAxes(fig, [0.1, 0.1, 0.8, 0.8])
     ax.imshow_rgb(rgb[0],rgb[1],rgb[2])
     
+def testMain(T_star,R,a,M_exo,R_exo):
+    A = 0
+    T = getT(T_star,R,a,A)
+    G = getG(M_exo, R_exo)
+    cfg = surviveTotal(T,G)
+    print(returnText(cfg,T_star))
+
 if __name__ == "__main__":
     #test_getT()
     ""

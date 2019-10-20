@@ -183,4 +183,6 @@ class Planet:
             'I': [IR, IG, IB],
         })
         rgb = RGB['I'] / np.max(RGB['I'])
-        return list(rgb)
+        rgb = list(rgb)
+        rgb.reverse()
+        return rgb

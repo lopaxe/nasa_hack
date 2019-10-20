@@ -35,16 +35,15 @@ body {
 height: 100%
 weight: 100%;
 }
-
 body {
-background-image: url(astronaut.jpg);
+background-image: url(images/astronaut.jpg);
 background-repeat: no-repeat;
 background-size: 100% 100%;
 }
 </style>
 
 <!-- HTML -->
-<img src="exoselfie_logo.JPG" height="180" width="240" align="left">
+<img src="images/exoselfie_logo.JPG" height="180" width="240" align="left">
 
 
     <!-- Heading Row -->
@@ -76,7 +75,7 @@ background-size: 100% 100%;
         </style>
 
         <!-- <a class="btn btn-primary" href="#">Upload Selfie!</a> -->
-        <input type="file" class="form-control-file" id="planetFormControlFile1" name="media">
+
       </div>
       <!-- /.col-md-4
       <form method="post" action="http://127.0.0.1:5000/upload-image" enctype="multipart/form-data">
@@ -97,24 +96,33 @@ background-size: 100% 100%;
 
   <section id="projects" class="projects-section bg-light">
     <div class="container">
-      	<form method="post" action="http://127.0.0.1:5000/upload-image/post" enctype="text/plain">
+      	<form method="post" action="http://127.0.0.1:5000/upload-image" enctype="multipart/form-data">
       	<div class="row">
+            <input type="file" class="form-control-file" id="planetFormControlFile1" name="media">
+        </div>
+            <div class="row">
         <div class="col">
           <div class="form-group text-center">
             <label> <b>Planetary Parameters</b> </label>
           </div>
           <div class="form-group">
             <label> Planet Mass (Earth mass)	</label>
-              <input id="ex1" data-slider-id='ex1Slider' type="text" data-slider-min="0" data-slider-max="20" data-slider-step="1" data-slider-value="14"/>
-            </div>
+            <span class="font-weight-bold indigo-text mr-2 mt-1">0.5</span>
+            <input id="ex1" name="M_exo" data-slider-id='ex1Slider' type="text" data-slider-min="0.5" data-slider-max="9000" data-slider-step="1" data-slider-value="1"/>
+            <span class="font-weight-bold indigo-text ml-2 mt-1">9000</span>
+          </div>
 
           <div class="form-group">
             <label>Planet Radius (Earth radii)</label>
-            <input id="ex2" data-slider-id='ex2Slider' type="text" data-slider-min="0" data-slider-max="20" data-slider-step="1" data-slider-value="14"/>
+            <span class="font-weight-bold indigo-text mr-2 mt-1">0.5</span>
+            <input id="ex2" name="R_exo" data-slider-id='ex2Slider' type="text" data-slider-min="0" data-slider-max="25" data-slider-step="1" data-slider-value="1"/>
+            <span class="font-weight-bold indigo-text ml-2 mt-1">25</span>
           </div>
           <div class="form-group">
             <label>Distance from the star (AU)</label>
-            <input id="ex3" data-slider-id='ex3Slider' type="text" data-slider-min="0" data-slider-max="20" data-slider-step="1" data-slider-value="14"/>
+            <span class="font-weight-bold indigo-text mr-2 mt-1">0.01</span>
+            <input id="ex3" name="a" data-slider-id='ex3Slider' type="text" data-slider-min="0.01" data-slider-max="2" data-slider-step="0.01" data-slider-value="1"/>
+            <span class="font-weight-bold indigo-text ml-2 mt-1">2</span>
           </div>
         </div>
         <div class="col">
@@ -123,11 +131,15 @@ background-size: 100% 100%;
             </div>
       	  <div class="form-group">
         	<label>Effective Temperature (K)</label>
-              <input id="ex4" data-slider-id='ex4Slider' type="text" data-slider-min="0" data-slider-max="20" data-slider-step="1" data-slider-value="14"/>
+              <span class="font-weight-bold indigo-text mr-2 mt-1">2500</span>
+              <input id="ex4" name="T_star" data-slider-id='ex4Slider' type="text" data-slider-min="2500" data-slider-max="10000" data-slider-step="50" data-slider-value="2800"/>
+              <span class="font-weight-bold indigo-text ml-2 mt-1">10000</span>
           </div>
           <div class="form-group">
             <label>Stellar Radius (solar radii)</label>
-          	  <input id="ex5" data-slider-id='ex5Slider' type="text" data-slider-min="0" data-slider-max="20" data-slider-step="1" data-slider-value="14"/>
+              <span class="font-weight-bold indigo-text mr-2 mt-1">0</span>
+              <input id="ex5" name="R" data-slider-id='ex5Slider' type="text" data-slider-min="0" data-slider-max="20" data-slider-step="1" data-slider-value="14"/>
+              <span class="font-weight-bold indigo-text ml-2 mt-1">100</span>
             </div>
             <input type="submit" value="Submit"/>
        </div>
@@ -176,9 +188,9 @@ background-size: 100% 100%;
         <div class="card h-100">
           <div class="card-body">
             <h2 class="card-title">Results</h2>
-            <p class="card-text"> Here's a picture of you on the planet that you've built yourself! The average temperature on this planet is 96 degrees centigrade which is considered hot. The surface gravity of your planet is around that of the Earth which is normal to a human body. Unfortunately you wouldn't last 10 minutes on this planet because of too much heat. 
+            <p class="card-text"> Here's a picture of you on the planet that you've built yourself! It orbits a start that has an orange tint because of its temperature. The average temperature on this planet is 450 degrees centigrade which is considered extremely hot. The surface gravity of your planet is around 45 times larger than Earth's and is considered deadly. Unfortunately you wouldn't last 10 minutes on this planet because of extreme heat and unbearable gravitational force.
 
-There is a known exoplanet called Kepler-289 c completing an orbit around its host star DATA_MISSING every 126 days that is similar to your planet with a score of 95. </p>
+There is a known exoplanet called 'Kepler-39 b' that is similar to your planet with a score of 78. This planet completes an orbit around its host star Kepler-39 every 21 days. </p>
           </div>
           <div class="card-footer">
           </div>
@@ -212,25 +224,21 @@ There is a known exoplanet called Kepler-289 c completing an orbit around its ho
         return 'Current value: ' + value;
       }
     });
-
     $('#ex2').slider({
       formatter: function(value) {
         return 'Current value: ' + value;
       }
     });
-
     $('#ex3').slider({
       formatter: function(value) {
         return 'Current value: ' + value;
       }
     });
-
     $('#ex4').slider({
       formatter: function(value) {
         return 'Current value: ' + value;
       }
     });
-
     $('#ex5').slider({
       formatter: function(value) {
         return 'Current value: ' + value;
