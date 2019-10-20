@@ -9,6 +9,7 @@ def post_request(data):
 
 
 def post_image(data):
+    headers = {'Content-type': 'multipart/form-data'}
     url = 'http://localhost:5000/upload-image'
     r = requests.post(url, files=data)
     print(r.text)
@@ -16,6 +17,6 @@ def post_image(data):
 
 if __name__ == "__main__":
 
-    post_request({'first_field': "", 'second_field': ""})
+    #post_request({'first_field': "", 'second_field': ""})
 
-    post_image({'media': open("pics/Aurimas_Griciunas.jpg", "rb")})
+    post_image({'media': open("/Users/agriciunas/Desktop/NASA_HACKATON_DEV/pictures/Ovidijus.jpg", "rb")})

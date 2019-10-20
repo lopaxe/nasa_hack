@@ -1,4 +1,5 @@
 import numpy as np
+import pandas as pd
 
 
 class Planet:
@@ -160,3 +161,26 @@ class Planet:
                 else:
                     res['cod'] = 'cold'
         return res
+
+    @property
+    def RGB(self):
+        h = 6.626e-34
+        c = 2.998e8
+        k = 1.38e-23
+
+        def bbr(T, v):
+            I = (2 * h * v ** 3 / c ** 2) * 1 / (np.e ** (h * v / (k * T)) - 1)
+            return I
+
+        vR = c / 610e-9
+        vG = c / 550e-9
+        vB = c / 465e-9
+        IR = bbr(self.T_star, vR)
+        IG = bbr(self.T_star, vG)
+        IB = bbr(self.T_star, vB)
+        RGB = pd.DataFrame({
+            'color': ['R', 'G', 'B'],
+            'I': [IR, IG, IB],
+        })
+        rgb = RGB['I'] / np.max(RGB['I'])
+        return list(rgb)
