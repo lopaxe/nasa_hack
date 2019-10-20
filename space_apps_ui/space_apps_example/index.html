@@ -70,7 +70,7 @@ body {
 height: 100%;
 }
 body {
-background-image: url(astronaut.jpg);
+background-image: url(image/astronaut.jpg);
 background-repeat: repeat;
 background-size: 100% 100%;
 }
@@ -80,7 +80,7 @@ background-size: 100% 100%;
 <body>
 
 <!-- HTML -->
-<img src="exoselfie_logo.JPG" height="180" width="240" align="left">
+<img src="image/exoselfie_logo.JPG" height="180" width="240" align="left">
 </body>
 </html>
 
@@ -92,7 +92,7 @@ background-size: 100% 100%;
     <head>
     <style>
         .backgroun {
-            background-image: url("hs.jpg");
+            background-image: url("image/exoselfie_logo.jpg");
         }
     </style>
     </head>
@@ -109,7 +109,7 @@ background-size: 100% 100%;
         <!-- <a class="btn btn-primary" href="#">Upload Selfie!</a> -->
         <input type="file" class="form-control-file" id="planetFormControlFile1" name="media">
       </div>
-      <!-- /.col-md-4
+      <!-- /.col-md-4 -->
       <form method="post" action="http://127.0.0.1:5000/upload-image" enctype="multipart/form-data">
       <div>
         <div class="row align-items-center">
@@ -121,7 +121,7 @@ background-size: 100% 100%;
    		</div>
    	   </div>
    	   </form>
-    </div> -->
+    </div> 
     <!-- /.row -->
 
 
@@ -139,8 +139,10 @@ background-size: 100% 100%;
             <label> <b>Planetary Parameters</b> </label>
           </div>
           <div class="form-group">
-            <label>Size</label>
-              <input id="ex1" data-slider-id='ex1Slider' type="text" data-slider-min="0" data-slider-max="20" data-slider-step="1" data-slider-value="14"/>
+            <label>Mass</label>
+            <span class="font-weight-bold indigo-text mr-2 mt-1">0.5</span>
+            <input id="ex1" data-slider-id='ex1Slider' type="text" data-slider-min="0.5" data-slider-max="9000" data-slider-step="1" data-slider-value="1"/>
+            <span class="font-weight-bold indigo-text ml-2 mt-1">9000</span>
               <body>
                   <html>
                   <script>
@@ -161,11 +163,15 @@ background-size: 100% 100%;
 
           <div class="form-group">
             <label>Radius</label>
-            <input id="ex2" data-slider-id='ex2Slider' type="text" data-slider-min="0" data-slider-max="20" data-slider-step="1" data-slider-value="14"/>
+            <span class="font-weight-bold indigo-text mr-2 mt-1">0.5</span>
+            <input id="ex2" data-slider-id='ex2Slider' type="text" data-slider-min="0" data-slider-max="25" data-slider-step="1" data-slider-value="1"/>
+            <span class="font-weight-bold indigo-text ml-2 mt-1">25</span>
           </div>
           <div class="form-group">
             <label>Distance*</label>
-            <input id="ex3" data-slider-id='ex3Slider' type="text" data-slider-min="0" data-slider-max="20" data-slider-step="1" data-slider-value="14"/>
+            <span class="font-weight-bold indigo-text mr-2 mt-1">0.01</span>
+            <input id="ex3" data-slider-id='ex3Slider' type="text" data-slider-min="0.01" data-slider-max="2" data-slider-step="0.01" data-slider-value="1"/>
+            <span class="font-weight-bold indigo-text ml-2 mt-1">2</span>
             <p>* from the star</p>
           </div>
         </div>
@@ -174,12 +180,17 @@ background-size: 100% 100%;
                 <label><b>Stellar Parameters</b></label>
             </div>
       	  <div class="form-group">
-        	<label>Temperature</label>
-              <input id="ex4" data-slider-id='ex4Slider' type="text" data-slider-min="0" data-slider-max="20" data-slider-step="1" data-slider-value="14"/>
+        	<label>Effective Temperature</label>
+              <span class="font-weight-bold indigo-text mr-2 mt-1">2500</span>
+              <input id="ex4" data-slider-id='ex4Slider' type="text" data-slider-min="2500" data-slider-max="10000" data-slider-step="50" data-slider-value="2800"/>
+              <span class="font-weight-bold indigo-text ml-2 mt-1">10000</span>
           </div>
+
           <div class="form-group">
-            <label>Radius</label>
+            <label>Stellar Radius</label>
+              <span class="font-weight-bold indigo-text mr-2 mt-1">0</span>
           	  <input id="ex5" data-slider-id='ex5Slider' type="text" data-slider-min="0" data-slider-max="20" data-slider-step="1" data-slider-value="14"/>
+              <span class="font-weight-bold indigo-text ml-2 mt-1">100</span>
           </div>
    			</div>
    		</div>
