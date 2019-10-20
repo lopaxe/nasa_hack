@@ -1,7 +1,7 @@
 class AppConfig:
 
     def __init__(self):
-        self.UPLOAD_PATH="../space_apps_ui/space_apps_example/uploaded_files"
+        self.UPLOAD_PATH="uploaded_files"
         self.STYLE_PATH="pics/styles"
         self.TRANSFORMATION_PATH="pics/transformations"
         self.TRANSFORMATION_PATH = "pics/transformations"

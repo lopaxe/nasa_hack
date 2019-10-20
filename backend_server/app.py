@@ -37,8 +37,8 @@ def upload_image():
 
     if request.files:
         image = request.files["media"]
-        #params = json.loads(request.data)
-        params = {"T_star": 5400, "R": 2, "a": 2.5, "M_exo":1, "R_exo":1}
+        #params = request.get_json(force=True)
+        params = {"T_star": 5400, "R": 2, "a": 1, "M_exo":1, "R_exo":1}
         image.save(f"{app_config.UPLOAD_PATH}/{image.filename}")
         planet_object = Planet(**params)
         survival = planet_object.surviveTotal
