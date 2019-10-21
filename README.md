@@ -26,5 +26,5 @@ You might see something like this:
 
 ## Upload your photo and have fun!
 
-<img src="https://i.imgur.com/98YR4ZF.jpg"  />
+<img src="https://i.imgur.com/wKXaBLE.jpg"  />
 
