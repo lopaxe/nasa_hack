@@ -20,9 +20,7 @@ You might see something like this:
 You might see something like this:
 <img src="https://i.imgur.com/iEtY2Kj.png"  />
 
-## You are ready to access your app on http://127.0.0.1:5000/ :
-
-<img src="https://i.imgur.com/Z9wAToG.jpg"  />
+## You are ready to access your app on http://127.0.0.1:5000/
 
 ## Upload your photo and have fun!
 
