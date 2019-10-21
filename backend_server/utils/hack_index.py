@@ -317,7 +317,7 @@ def returnText(cfg, T_star):
     # Survival
     text = f"""
     Here's a picture of you on the planet that you've built yourself! 
-    It orbits a start that 
+    It orbits a star that 
     """
     if T_star < 2000:
         text += "appears red "
